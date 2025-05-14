@@ -1,0 +1,108 @@
+<div class="solar-system">
+  <!-- Звезды -->
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <!-- Метеориты -->
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <!-- Кометы -->
+  <div class="comet"></div>
+  <div class="comet"></div>
+  <div class="comet"></div>
+  <div class="comet"></div>
+  <div class="sun" (click)="onPlanetClick('sun')"></div>
+
+  <div class="orbit orbit-mercury">
+    <div class="planet-wrapper">
+      <div class="planet mercury" (click)="onPlanetClick('mercury')"></div>
+    </div>
+  </div>
+  <div class="orbit orbit-venus">
+    <div class="planet-wrapper">
+      <div class="planet venus" (click)="onPlanetClick('venus')"></div>
+    </div>
+  </div>
+  <div class="orbit orbit-earth">
+    <div class="planet-wrapper">
+      <div class="planet earth" (click)="onPlanetClick('earth')"></div>
+    </div>
+  </div>
+  <div class="orbit orbit-mars">
+    <div class="planet-wrapper">
+      <div class="planet mars" (click)="onPlanetClick('mars')"></div>
+    </div>
+  </div>
+  <div class="orbit orbit-jupiter">
+    <div class="planet-wrapper">
+      <div class="planet jupiter" (click)="onPlanetClick('jupiter')"></div>
+    </div>
+  </div>
+  <div class="orbit orbit-saturn">
+    <div class="planet-wrapper">
+      <div class="planet saturn" (click)="onPlanetClick('saturn')"></div>
+    </div>
+  </div>
+  <div class="orbit orbit-uranus">
+    <div class="planet-wrapper">
+      <div class="planet uranus" (click)="onPlanetClick('uranus')"></div>
+    </div>
+  </div>
+  <div class="orbit orbit-neptune">
+    <div class="planet-wrapper">
+      <div class="planet neptune" (click)="onPlanetClick('neptune')"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Информационное окно -->
+<div *ngIf="selectedPlanet" class="info-window">
+  <h2>{{ selectedPlanet.label }}</h2>
+  <p>{{ selectedPlanet.info }}</p>
+  <button (click)="closeInfoWindow()">Close</button>
+</div>
+

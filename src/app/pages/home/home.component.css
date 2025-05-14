@@ -1,0 +1,25 @@
+.home-container {
+  text-align: center;
+  padding: 3rem;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #000000 70%), 
+              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"><circle cx="30" cy="40" r="1.2" fill="white" opacity="0.7"/><circle cx="80" cy="100" r="0.9" fill="white" opacity="0.5"/><circle cx="120" cy="200" r="1.5" fill="white" opacity="0.8"/><circle cx="150" cy="300" r="1" fill="white" opacity="0.6"/><circle cx="200" cy="50" r="1.3" fill="white" opacity="0.9"/><circle cx="250" cy="400" r="0.8" fill="white" opacity="0.4"/><circle cx="300" cy="150" r="1.1" fill="white" opacity="0.7"/><circle cx="350" cy="500" r="1.4" fill="white" opacity="0.8"/><circle cx="400" cy="80" r="1" fill="white" opacity="0.5"/><circle cx="450" cy="600" r="1.2" fill="white" opacity="0.9"/><circle cx="500" cy="200" r="0.9" fill="white" opacity="0.6"/><circle cx="550" cy="350" r="1.3" fill="white" opacity="0.7"/><circle cx="600" cy="100" r="1.1" fill="white" opacity="0.8"/><circle cx="650" cy="450" r="0.8" fill="white" opacity="0.5"/><circle cx="700" cy="250" r="1.5" fill="white" opacity="0.9"/><circle cx="750" cy="550" r="1" fill="white" opacity="0.6"/><circle cx="800" cy="300" r="1.2" fill="white" opacity="0.7"/><circle cx="850" cy="650" r="0.9" fill="white" opacity="0.8"/><circle cx="900" cy="150" r="1.3" fill="white" opacity="0.5"/><circle cx="950" cy="400" r="1.1" fill="white" opacity="0.9"/><circle cx="100" cy="700" r="1" fill="white" opacity="0.6"/><circle cx="150" cy="800" r="1.4" fill="white" opacity="0.7"/><circle cx="200" cy="900" r="0.8" fill="white" opacity="0.4"/><circle cx="250" cy="600" r="1.2" fill="white" opacity="0.8"/><circle cx="300" cy="750" r="1" fill="white" opacity="0.5"/><circle cx="350" cy="200" r="1.3" fill="white" opacity="0.9"/><circle cx="400" cy="850" r="0.9" fill="white" opacity="0.6"/><circle cx="450" cy="300" r="1.5" fill="white" opacity="0.7"/><circle cx="500" cy="950" r="1.1" fill="white" opacity="0.8"/><circle cx="550" cy="400" r="1" fill="white" opacity="0.5"/></svg>');
+  color: #fff;
+  border-radius: 12px;
+}
+
+.explore-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #00061f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #1b1569;
+}

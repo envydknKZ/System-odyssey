@@ -1,0 +1,26 @@
+<h2>Планеты Солнечной системы</h2>
+<div *ngIf="planets.length; else loading">
+  <div *ngFor="let planet of planets" class="planet-card">
+    <h3>{{ planet.englishName }}</h3>
+    <p><strong>Масса:</strong> {{ planet.mass?.massValue }} ×10^{{ planet.mass?.massExponent }} кг</p>
+    <p><strong>Гравитация:</strong> {{ planet.gravity }} м/с²</p>
+
+    <div class="planet-info">
+      <img
+        [src]="planetImages[planet.englishName]"
+        alt="{{ planet.englishName }}"
+        width="200"
+        *ngIf="planetImages[planet.englishName]"
+      />
+
+      <div class="planet-details">
+        <p><strong>Состав:</strong> {{ planetComposition[planet.englishName] || 'нет данных' }}</p>
+        <p><strong>Особенности:</strong> {{ planetFeatures[planet.englishName] || 'нет данных' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Загрузка планет...</p>
+</ng-template>

@@ -1,0 +1,226 @@
+.solar-system {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  /* Звездный фон с градиентом и точками */
+  background: radial-gradient(circle at center, #1a1a2e 0%, #000000 70%), 
+              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"><circle cx="50" cy="50" r="1" fill="white" opacity="0.8"/><circle cx="150" cy="200" r="1.5" fill="white" opacity="0.6"/><circle cx="300" cy="100" r="1" fill="white" opacity="0.7"/><circle cx="400" cy="600" r="1.2" fill="white" opacity="0.9"/><circle cx="500" cy="300" r="1" fill="white" opacity="0.5"/><circle cx="600" cy="800" r="1.3" fill="white" opacity="0.8"/><circle cx="700" cy="400" r="1" fill="white" opacity="0.6"/><circle cx="800" cy="500" r="1.5" fill="white" opacity="0.7"/><circle cx="900" cy="700" r="1" fill="white" opacity="0.8"/></svg>');
+  border-radius: 50%;
+  overflow: visible;
+}
+
+/* Мерцающие звезды */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+/* Разные позиции и задержки для звезд */
+.star:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 15%; animation-delay: 0.5s; }
+.star:nth-child(2) { width: 1.5px; height: 1.5px; top: 20%; left: 30%; animation-delay: 1s; }
+.star:nth-child(3) { width: 1px; height: 1px; top: 35%; left: 45%; animation-delay: 1.5s; }
+.star:nth-child(4) { width: 2px; height: 2px; top: 50%; left: 60%; animation-delay: 2s; }
+.star:nth-child(5) { width: 1.2px; height: 1.2px; top: 65%; left: 75%; animation-delay: 2.5s; }
+.star:nth-child(6) { width: 1.8px; height: 1.8px; top: 80%; left: 20%; animation-delay: 0.8s; }
+.star:nth-child(7) { width: 1.4px; height: 1.4px; top: 25%; left: 85%; animation-delay: 1.2s; }
+.star:nth-child(8) { width: 1.6px; height: 1.6px; top: 70%; left: 40%; animation-delay: 1.8s; }
+
+/* Метеориты */
+.meteor {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px #ffffff;
+  animation: meteor 5s linear infinite;
+}
+
+/* Разные задержки для метеоритов */
+.meteor:nth-child(1) { animation-delay: 2s; }
+.meteor:nth-child(2) { animation-delay: 4s; }
+.meteor:nth-child(3) { animation-delay: 6s; }
+
+/* Кометы */
+.comet {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px #ffffff, 0 0 20px 10px rgba(255, 255, 255, 0.5); /* Хвост */
+  animation: comet 8s linear infinite;
+}
+
+/* Разные задержки для комет */
+.comet:nth-child(1) { animation-delay: 3s; }
+.comet:nth-child(2) { animation-delay: 7s; }
+
+/* Анимация мерцания звезд */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+/* Анимация метеорита */
+@keyframes meteor {
+  0% { transform: translate(0, -1000px); opacity: 1; }
+  100% { transform: translate(1000px, 1000px); opacity: 0; }
+}
+
+/* Анимация кометы */
+@keyframes comet {
+  0% { transform: translate(-200px, -1000px); opacity: 1; }
+  100% { transform: translate(1000px, 800px); opacity: 0; }
+}
+
+.solar-system {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  background-color: black;
+  border-radius: 50%;
+  overflow: visible;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  background: radial-gradient(circle, #ffdd00, #ff9900);
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px #ffb300;
+}
+
+/* Общая анимация орбиты */
+.orbit {
+  position: absolute;
+  border: 1px dotted rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rotate 60s linear infinite;
+}
+
+/* Планеты крутятся сами */
+.planet-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  animation: spinPlanet 2s linear infinite;
+}
+
+.planet {
+  border-radius: 50%;
+}
+
+/* Вращение планеты вокруг Солнца */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Вращение планеты вокруг своей оси */
+@keyframes spinPlanet {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Индивидуальные орбиты и размеры */
+.orbit-mercury { width: 120px; height: 120px; top: 50%; left: 50%; margin: -60px 0 0 -60px; animation-duration: 10s; }
+.mercury { width: 8px; height: 8px; background: gray; }
+
+.orbit-venus { width: 170px; height: 170px; top: 50%; left: 50%; margin: -85px 0 0 -85px; animation-duration: 15s; }
+.venus { width: 12px; height: 12px; background: #f4a261; }
+
+.orbit-earth { width: 220px; height: 220px; top: 50%; left: 50%; margin: -110px 0 0 -110px; animation-duration: 20s; }
+.earth { width: 14px; height: 14px; background: #2196f3; }
+
+.orbit-mars { width: 270px; height: 270px; top: 50%; left: 50%; margin: -135px 0 0 -135px; animation-duration: 25s; }
+.mars { width: 10px; height: 10px; background: #e74c3c; }
+
+.orbit-jupiter { width: 340px; height: 340px; top: 50%; left: 50%; margin: -170px 0 0 -170px; animation-duration: 30s; }
+.jupiter { width: 20px; height: 20px; background: #d2b48c; }
+
+.orbit-saturn { width: 420px; height: 420px; top: 50%; left: 50%; margin: -210px 0 0 -210px; animation-duration: 35s; }
+.saturn { width: 18px; height: 18px; background: #deb887; }
+
+.orbit-uranus { width: 500px; height: 500px; top: 50%; left: 50%; margin: -250px 0 0 -250px; animation-duration: 45s; }
+.uranus { width: 16px; height: 16px; background: #00ffff; }
+
+.orbit-neptune { width: 580px; height: 580px; top: 50%; left: 50%; margin: -290px 0 0 -290px; animation-duration: 55s; }
+.neptune { width: 16px; height: 16px; background: #4169e1; }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .solar-system {
+    height: 600px;
+    max-width: 600px;
+  }
+}
+/* Стиль для окна с информацией */
+.info-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.info-window h2 {
+  margin: 0 0 10px;
+}
+
+.info-window p {
+  margin: 0 0 20px;
+}
+
+.info-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  z-index: 9999;  /* Добавляем высокий z-index */
+}
+
+
+.info-window button:hover {
+  background-color: #ff9900;
+}
+.orbit {
+  pointer-events: none; /* Запрещает клики по орбитам */
+}
+
+.planet-wrapper, .planet {
+  pointer-events: auto; /* Разрешает клики по планетам */
+  cursor: pointer;
+}
